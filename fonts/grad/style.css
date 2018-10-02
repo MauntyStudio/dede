@@ -1,0 +1,139 @@
+/* CSS Document */
+
+html, body{ margin:0; padding:0; }
+
+.container{ width:100vw; height:100vh;}
+
+
+.canvas-background
+{
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	/*background-image: linear-gradient(to bottom right, #31388d 0%, #753fa9 33.333%, #ff0762 66%, #f25632 100%);
+	background-image: -moz-linear-gradient(to bottom right, #31388d 0%, #753fa9 33.333%, #ff0762 66%, #f25632 100%);
+	background-image: -webkit-linear-gradient(to bottom right, #31388d 0%, #753fa9 33.333%, #ff0762 66%, #f25632 100%);
+	*/
+	background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);
+	z-index: 3;
+	overflow:hidden;
+}
+
+.tri{
+
+    transform: skewX(-45deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -50%;
+	 z-index:200;
+}
+.trii{
+
+    transform: skewX(-45deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+	z-index:200
+}
+.mouse{
+	display:none;     
+	position: absolute;
+    
+    width:200vw;
+    height: 200vw;
+    top: 0;
+	left: 0;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	z-index:100;
+	
+	transition-property: all;
+	transition-duration: 0.01s;
+	transition-timing-function:linear;
+	
+	}
+	
+.mouse .gra1 { height:0; width:0; background-image:radial-gradient(20% 20%, rgba(67, 18, 117, 0.7), transparent); 
+	position:absolute; top:0; bottom:0; left:0; right:0; margin:auto;
+	opacity:1;
+	background-repeat: no-repeat;
+	transition-property: all;
+	transition-duration: 1.5s;
+	transition-timing-function: ease;
+	background-position:0 0;
+	z-index:100
+	 
+	}	
+
+.mouse .gra2 {height:0; width:0; background-image:radial-gradient(20% 20%, rgba(235, 5, 125, 0.4), transparent); opacity:1;
+position:absolute; top:0; bottom:0; left:0; right:0; margin:auto;
+    background-repeat: no-repeat;
+	transition-property: all;
+	transition-duration: 1.5s;
+	transition-timing-function: ease;
+	z-index:100  }	
+
+	.anigra{
+		height:300vw;
+		width:300vh;
+		background-image:radial-gradient(20% 60%, rgba(68, 19, 123, 0.4), transparent); 
+		background-size: 160% 160%;
+    	background-repeat: no-repeat;
+   	 	background-position: 200% 0%;
+		position: absolute;
+   		top: -300vh;
+    	bottom: -300vh;
+    	right: -300vw;
+		left: -300vw;
+   		 margin: auto;
+		transform:rotate(45deg);
+		animation:gra 7s linear infinite;
+		z-index:100	
+		}
+		
+	.anigra2{
+		height:300vw;
+		width:300vh;
+		
+		background-image:radial-gradient(20% 60%, rgba(226, 7, 125, 0.4), transparent); 
+		background-size: 160% 160%;
+    	background-repeat: no-repeat;
+   	 	background-position: -100% 0%;
+		position: absolute;
+   		top: -300vh;
+    	bottom: -300vh;
+    	right: -300vw;
+		left: -300vw;
+   		 margin: auto;
+		transform:rotate(45deg);
+		animation:gra2 10s linear infinite;
+		z-index:100
+		}	
+		
+@media only screen and (min-width: 960px) {
+	.mouse{ display:block}
+		.mouse{ display:block}
+		
+		.anigra, .anigra2{ display:none}
+
+}
+	
+
+@keyframes gra{
+   0%{ opacity:1}  
+    70%{background-position:-100% 0; opacity:0 }
+
+	100%{background-position:200% 0; opacity:1}
+
+  }
+  @keyframes gra2{
+	0%{ opacity:1}  
+    70%{background-position:200% 0; opacity:0 }
+
+	100%{background-position:-100% 0; opacity:1}
+  }
